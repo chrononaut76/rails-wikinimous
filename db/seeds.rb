@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
+10.times do
+  Article.new(
+    title: Faker::Quote.mitch_hedberg,
+    content: Faker::Lorem.paragraph(
+      sentence_count: 3,
+      supplemental: true,
+      random_sentences_to_add: 2))
+end
